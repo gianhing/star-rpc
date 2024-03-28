@@ -1,8 +1,8 @@
 package com.example.server;
 
+import com.example.server.handler.VertxHttpServerHandler;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpServer;
-import io.vertx.core.http.HttpServerResponse;
 
 
 public class VertxHttpServer implements IHttpServer {
@@ -15,13 +15,7 @@ public class VertxHttpServer implements IHttpServer {
         HttpServer httpServer = vertx.createHttpServer();
 
         // 设置请求处理器
-        httpServer.requestHandler(request -> {
-            System.out.println("Received url: [" + request.method() + "] " + request.uri());
-
-            HttpServerResponse response = request.response();
-            response.putHeader("content-type", "text/plain")
-                    .end("Hello from Vert.x Http Server");
-        });
+        httpServer.requestHandler(new VertxHttpServerHandler());
 
         // 启动服务器并监听端口
         httpServer.listen(port, res -> {
