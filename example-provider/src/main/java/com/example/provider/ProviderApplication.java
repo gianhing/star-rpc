@@ -2,9 +2,9 @@ package com.example.provider;
 
 import com.example.common.service.UserService;
 import com.example.provider.service.impl.UserServiceImpl;
-import com.example.registry.LocalRegistry;
-import com.example.server.IHttpServer;
-import com.example.server.VertxHttpServer;
+import com.example.rpc.registry.LocalRegistry;
+import com.example.rpc.server.IHttpServer;
+import com.example.rpc.server.VertxHttpServer;
 
 public class ProviderApplication {
     public static void main(String[] args) {

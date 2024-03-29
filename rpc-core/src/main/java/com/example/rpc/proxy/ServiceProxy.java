@@ -1,12 +1,12 @@
-package com.example.proxy;
+package com.example.rpc.proxy;
 
 import cn.hutool.core.lang.Console;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
-import com.example.model.RpcRequest;
-import com.example.model.RpcResponse;
-import com.example.serializer.JdkSerializer;
-import com.example.serializer.Serializer;
+import com.example.rpc.model.RpcRequest;
+import com.example.rpc.model.RpcResponse;
+import com.example.rpc.serializer.JdkSerializer;
+import com.example.rpc.serializer.Serializer;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;

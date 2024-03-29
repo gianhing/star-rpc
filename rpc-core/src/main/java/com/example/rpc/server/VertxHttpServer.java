@@ -1,6 +1,6 @@
-package com.example.server;
+package com.example.rpc.server;
 
-import com.example.server.handler.VertxHttpServerHandler;
+import com.example.rpc.server.handler.VertxHttpServerHandler;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpServer;
 

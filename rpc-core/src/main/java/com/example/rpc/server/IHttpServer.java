@@ -1,4 +1,4 @@
-package com.example.server;
+package com.example.rpc.server;
 
 /**
  * HTTP 服务器接口

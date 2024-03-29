@@ -1,11 +1,11 @@
-package com.example.server.handler;
+package com.example.rpc.server.handler;
 
 import cn.hutool.core.lang.Console;
-import com.example.model.RpcRequest;
-import com.example.model.RpcResponse;
-import com.example.registry.LocalRegistry;
-import com.example.serializer.JdkSerializer;
-import com.example.serializer.Serializer;
+import com.example.rpc.model.RpcRequest;
+import com.example.rpc.model.RpcResponse;
+import com.example.rpc.serializer.JdkSerializer;
+import com.example.rpc.serializer.Serializer;
+import com.example.rpc.registry.LocalRegistry;
 import io.vertx.core.Handler;
 import io.vertx.core.buffer.Buffer;
 import io.vertx.core.http.HttpServerRequest;

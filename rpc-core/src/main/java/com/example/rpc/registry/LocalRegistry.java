@@ -1,4 +1,4 @@
-package com.example.registry;
+package com.example.rpc.registry;
 
 import java.util.concurrent.ConcurrentHashMap;
 

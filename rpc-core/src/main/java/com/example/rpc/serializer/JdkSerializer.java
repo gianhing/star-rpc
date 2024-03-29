@@ -1,4 +1,4 @@
-package com.example.serializer;
+package com.example.rpc.serializer;
 
 import java.io.*;
 
