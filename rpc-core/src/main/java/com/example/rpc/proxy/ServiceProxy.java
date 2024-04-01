@@ -3,6 +3,8 @@ package com.example.rpc.proxy;
 import cn.hutool.core.lang.Console;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
+import com.example.rpc.RpcApplication;
+import com.example.rpc.config.RpcConfig;
 import com.example.rpc.model.RpcRequest;
 import com.example.rpc.model.RpcResponse;
 import com.example.rpc.serializer.JdkSerializer;
@@ -29,7 +31,9 @@ public class ServiceProxy implements InvocationHandler {
                 .build();
 
         byte[] bytes = serializer.serialize(rpcRequest);
-        try (HttpResponse response = HttpRequest.post("http://localhost:8080").body(bytes).execute()) {
+        RpcConfig rpcConfig = RpcApplication.getRpcConfig();
+        String url = "http://" + rpcConfig.getHost() + ":" + rpcConfig.getPort();
+        try (HttpResponse response = HttpRequest.post(url).body(bytes).execute()) {
             byte[] result = response.bodyBytes();
             RpcResponse rpcResponse = serializer.deserialize(result, RpcResponse.class);
             return rpcResponse.getData();
